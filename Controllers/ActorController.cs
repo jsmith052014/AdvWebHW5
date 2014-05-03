@@ -18,7 +18,20 @@ namespace SmithJessicaHW5.Controllers
 
         public ActionResult Index()
         {
-            return View(db.Actors.ToList());
+            var Movies = db.Movies.ToList();
+            var Actors = db.Actors.ToList();
+            List<Movie> ActorMovies = new List<Movie>();
+            foreach (var movie in Movies)
+                foreach (var actor in Actors)
+                {
+                    foreach (var actor2 in movie.Actors)
+                        if (actor2.Id == actor.Id)
+                            ActorMovies.Add(movie);
+
+                    actor.Movies = ActorMovies;
+                    ActorMovies.Clear();
+                }
+            return View(Actors);
         }
 
         //

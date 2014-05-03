@@ -18,5 +18,7 @@ namespace SmithJessicaHW5.Models
         [Required]
         [DisplayName("Last Name")]
         public string LastName { get; set; }
+
+        public virtual List<Movie> Movies { get; set; }
     }
 }
