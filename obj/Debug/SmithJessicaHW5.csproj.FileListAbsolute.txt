@@ -80,8 +80,5 @@ E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\bin\ko\System.Spatial.resources.dll
 E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\bin\ru\System.Spatial.resources.dll
 E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\bin\zh-Hans\System.Spatial.resources.dll
 E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\bin\zh-Hant\System.Spatial.resources.dll
-E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\obj\Debug\SmithJessicaHW5.Migrations.InitialCreate.resources
-E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\obj\Debug\SmithJessicaHW5.csproj.GenerateResource.Cache
 E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\obj\Debug\SmithJessicaHW5.dll
 E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\obj\Debug\SmithJessicaHW5.pdb
-E:\AdvWeb\SmithJessicaHW5\SmithJessicaHW5\obj\Debug\SmithJessicaHW5.csprojResolveAssemblyReference.cache

@@ -18,19 +18,9 @@ namespace SmithJessicaHW5.Controllers
 
         public ActionResult Index()
         {
-            var Movies = db.Movies.ToList();
+            
             var Actors = db.Actors.ToList();
-            List<Movie> ActorMovies = new List<Movie>();
-            foreach (var movie in Movies)
-                foreach (var actor in Actors)
-                {
-                    foreach (var actor2 in movie.Actors)
-                        if (actor2.Id == actor.Id)
-                            ActorMovies.Add(movie);
-
-                    actor.Movies = ActorMovies;
-                    ActorMovies.Clear();
-                }
+            
             return View(Actors);
         }
 
@@ -50,6 +40,7 @@ namespace SmithJessicaHW5.Controllers
         //
         // GET: /Actor/Create
 
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -60,6 +51,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Actor actor)
         {
             if (ModelState.IsValid)
@@ -75,6 +67,7 @@ namespace SmithJessicaHW5.Controllers
         //
         // GET: /Actor/Edit/5
 
+        [Authorize(Roles="Admin")]
         public ActionResult Edit(int id = 0)
         {
             Actor actor = db.Actors.Find(id);
@@ -90,6 +83,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(Actor actor)
         {
             if (ModelState.IsValid)
@@ -103,7 +97,7 @@ namespace SmithJessicaHW5.Controllers
 
         //
         // GET: /Actor/Delete/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             Actor actor = db.Actors.Find(id);
@@ -119,6 +113,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Actor actor = db.Actors.Find(id);

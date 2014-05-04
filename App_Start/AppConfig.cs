@@ -8,13 +8,6 @@ namespace SmithJessicaHW5.App_Start
 {
     public class AppConfig
     {
-        public static void WebSecurityDbInit()
-        {
-            if (!WebSecurity.Initialized)
-            {
-                WebSecurity.InitializeDatabaseConnection("DefaultConnection", "UserProfile", "UserId", "UserName",
-            autoCreateTables: true);
-            }
-        }
+        
     }
 }

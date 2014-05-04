@@ -36,7 +36,7 @@ namespace SmithJessicaHW5.Controllers
 
         //
         // GET: /Home/Create
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -47,6 +47,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create(Movie movie)
         {
             if (ModelState.IsValid)
@@ -61,7 +62,7 @@ namespace SmithJessicaHW5.Controllers
 
         //
         // GET: /Home/Edit/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int id = 0)
         {
             Movie movie = db.Movies.Find(id);
@@ -77,6 +78,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(Movie movie)
         {
             if (ModelState.IsValid)
@@ -90,7 +92,7 @@ namespace SmithJessicaHW5.Controllers
 
         //
         // GET: /Home/Delete/5
-
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int id = 0)
         {
             Movie movie = db.Movies.Find(id);
@@ -106,6 +108,7 @@ namespace SmithJessicaHW5.Controllers
 
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult DeleteConfirmed(int id)
         {
             Movie movie = db.Movies.Find(id);

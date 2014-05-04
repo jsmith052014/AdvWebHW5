@@ -17,7 +17,9 @@ namespace SmithJessicaHW5
     {
         protected void Application_Start()
         {
-            AppConfig.WebSecurityDbInit();
+            AppInitialize.DoMigration();
+                      
+            AppInitialize.InitSecurity();
             
             AreaRegistration.RegisterAllAreas();
 

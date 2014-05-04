@@ -78,6 +78,13 @@ namespace SmithJessicaHW5.Controllers
                 try
                 {
                     WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    var roles = (SimpleRoleProvider)Roles.Provider;
+                    if (!roles.GetRolesForUser(model.UserName).Contains("Admin"))
+                    {
+                        roles.AddUsersToRoles(
+                            new[] { model.UserName }, new[] { "Admin" }
+                            );
+                    }
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

@@ -177,6 +177,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\AppConfig.cs" />
+    <Compile Include="App_Start\AppInitialize.cs" />
     <Compile Include="App_Start\AuthConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -188,9 +189,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201405010216384_InitialCreate.cs" />
-    <Compile Include="Migrations\201405010216384_InitialCreate.Designer.cs">
-      <DependentUpon>201405010216384_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201405040247522_InitialCreate.cs" />
+    <Compile Include="Migrations\201405040247522_InitialCreate.Designer.cs">
+      <DependentUpon>201405040247522_InitialCreate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -268,6 +269,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
+    <None Include="Properties\PublishProfiles\smith-jessica-3110-moviemanager - FTP %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\smith-jessica-3110-moviemanager - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\smith-jessica-3110-moviemanager - Web Deploy %282%29.pubxml" />
+    <None Include="Properties\PublishProfiles\smith-jessica-3110-moviemanager - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.0.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -345,8 +350,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201405010216384_InitialCreate.resx">
-      <DependentUpon>201405010216384_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201405040247522_InitialCreate.resx">
+      <DependentUpon>201405040247522_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

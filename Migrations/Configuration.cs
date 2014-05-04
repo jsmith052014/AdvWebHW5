@@ -14,12 +14,12 @@ namespace SmithJessicaHW5.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         private void SeedMembership()
         {
-            AppConfig.WebSecurityDbInit();
+            AppInitialize.InitSecurity();
 
             var roles = (SimpleRoleProvider)Roles.Provider;
             var membership = (SimpleMembershipProvider)Membership.Provider;
@@ -57,7 +57,7 @@ namespace SmithJessicaHW5.Migrations
                     Rating = 5,
                     IsFavorited = true,
                     Actors = new List<Actor> {
-                                new Actor {Id = 1, FirstName = "Robert", MiddleInitial ="A", LastName = "Downey Jr" }
+                                new Actor {Id = 1, FirstName = "Robert", MiddleInitial ="Z", LastName = "Downey Jr" }
                             }
                 },
                 new Movie
@@ -203,8 +203,13 @@ namespace SmithJessicaHW5.Migrations
 
              );
 
-               
-
+            var actors = context.Actors.ToList();
+            var movies = context.Movies.ToList();
+            foreach (var actor in actors)
+                foreach (var movie in movies)
+                    foreach (var movieActor in movie.Actors)
+                        if (actor.Id == movieActor.Id)
+                            actor.Movies.Add(movie);
             SeedMembership();
         }
     }
